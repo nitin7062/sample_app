@@ -12,11 +12,9 @@ class UsersController < ApplicationController
 
     if @user.save
       # flash[:success] = "Welcome to the Sample App!"
-      respond_to do |format|
-        format.html { redirect_to user_path(@user) }
-      end
+      redirect_to @user
     else
-      render turbo_stream: turbo_stream.replace("test", partial: "shared/error_messages")
+      render turbo_stream: turbo_stream.replace("new_page", partial: "shared/error_messages")
     end
   end
 

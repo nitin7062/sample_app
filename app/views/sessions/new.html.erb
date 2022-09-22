@@ -3,6 +3,7 @@
 	<div class="row">
 		<div class="col-md-6 col-md-offset-3">
 			<%= form_with(url: login_path, scope: :session,local:true )do |form|%>
+			<div id='login_page'> </div>
 			<%= form.label :email%>
 			<%= form.email_field :email, class: 'form-control'%><br>
 
@@ -18,5 +19,9 @@
 		</div>
 	</div>
 
+
+<script type="text/javascript">
+	console.log($('.form-control'))
+</script>
 
 
