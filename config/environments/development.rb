@@ -39,7 +39,29 @@ Rails.application.configure do
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = false
 
+  # host = 'localhost:3000'
+
+  config.hosts.clear
+  # Uncomment if you wish to allow Action Cable access from any origin.
+  # config.action_cable.disable_request_forgery_protection = true
+
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.perform_deliveries = true
+  # local server is host if you working non localhost
   host = 'localhost:3000'
+  # Use this if developing 
+
+config.action_mailer.delivery_method = :smtp
+  config.action_mailer.default_url_options = { host: host }
+
+  ActionMailer::Base.smtp_settings = {
+    address: 'smtp.gmail.com',
+    port: '587',
+    user_name: 'nitinkool22@gmail.com',
+    password: 'xqxlkafvejiphszr',
+    authentication: 'plain',
+    enable_starttls_auto: true
+  }
   # Local server
   config.action_mailer.default_url_options = { host: host, protocol: 'http' }
 

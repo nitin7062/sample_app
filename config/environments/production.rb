@@ -16,6 +16,29 @@ Rails.application.configure do
   config.consider_all_requests_local       = false
   config.action_controller.perform_caching = true
 
+
+   config.hosts.clear
+  # Uncomment if you wish to allow Action Cable access from any origin.
+  # config.action_cable.disable_request_forgery_protection = true
+
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.perform_deliveries = true
+  # local server is host if you working non localhost
+  host = 'sample_app.herokuapp.com'
+  # Use this if developing 
+
+config.action_mailer.delivery_method = :smtp
+  config.action_mailer.default_url_options = { host: host }
+
+  ActionMailer::Base.smtp_settings = {
+    address: 'smtp.gmail.com',
+    port: '587',
+    user_name: 'eeukst@gmail.com',
+    password: 'dddvqxboungvnmym',
+    authentication: 'plain',
+    enable_starttls_auto: true
+  }
+
   # Ensures that a master key has been made available in either ENV["RAILS_MASTER_KEY"]
   # or in config/master.key. This key is used to decrypt credentials (and other encrypted files).
   # config.require_master_key = true
