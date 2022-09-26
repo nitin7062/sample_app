@@ -23,20 +23,21 @@ Rails.application.configure do
 
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.perform_deliveries = true
-  # local server is host if you working non localhost
-  host = 'sample_app.herokuapp.com'
-  # Use this if developing 
+  # local server is host if you working non localhost       
 
-config.action_mailer.delivery_method = :smtp
+  config.action_mailer.perform_caching = false
+  config.action_mailer.delivery_method = :smtp
+  host = 'https://vast-depths-09972.herokuapp.com' #replace with your own url
   config.action_mailer.default_url_options = { host: host }
 
-  ActionMailer::Base.smtp_settings = {
-    address: 'smtp.gmail.com',
-    port: '587',
-    user_name: 'eeukst@gmail.com',
-    password: 'dddvqxboungvnmym',
-    authentication: 'plain',
-    enable_starttls_auto: true
+  # SMTP settings for gmail
+  config.action_mailer.smtp_settings = {
+    :address              => "smtp.gmail.com",
+    :port                 => 587,
+    :user_name => 'eeukst@gmail.com',
+    :password => 'dddvqxboungvnmym',
+    :authentication       => "plain",
+    :enable_starttls_auto => true
   }
 
   # Ensures that a master key has been made available in either ENV["RAILS_MASTER_KEY"]
