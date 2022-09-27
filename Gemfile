@@ -74,7 +74,6 @@ end
 group :production do
   #For database
   gem 'pg'
-  # gem 'aws-sdk-s3', '1.46.0', require: false
 end
 
 group :test do
@@ -83,3 +82,5 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+
+
