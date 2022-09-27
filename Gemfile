@@ -10,7 +10,9 @@ gem 'faker'
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
 gem "rails-controller-testing"
-
+gem 'active_storage_validations'
+gem 'image_processing'
+gem 'mini_magick'
 gem 'bootstrap-sass', '3.4.1'
 # Use sqlite3 as the database for Active Record
 # Use the Puma web server [https://github.com/puma/puma]
@@ -72,6 +74,7 @@ end
 group :production do
   #For database
   gem 'pg'
+  # gem 'aws-sdk-s3', '1.46.0', require: false
 end
 
 group :test do
