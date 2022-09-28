@@ -10,7 +10,8 @@ class MicropostsController < ApplicationController
 			redirect_to root_url
 		else
 			@feed_items = current_user.feed.paginate(page: params[:page])
-			render 'static_pages/home'
+			# render 'static_pages/home'
+			render turbo_stream: turbo_stream.replace("login_page", partial: "shared/error_messages", locals: { object: @micropost, logged_in: false })
 		end
 	end
 

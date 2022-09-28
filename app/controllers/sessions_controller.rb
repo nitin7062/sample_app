@@ -20,7 +20,8 @@ class SessionsController < ApplicationController
         redirect_to root_url
       end
     else
-      render turbo_stream: turbo_stream.replace("login_page", partial: "shared/error_messages", locals: { logged_in?: true})
+      render turbo_stream: turbo_stream.replace("login_page", partial: "shared/error_messages", locals: { object: nil, logged_in: true}
+        )
     end
   end
 

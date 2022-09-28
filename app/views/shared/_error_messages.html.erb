@@ -1,4 +1,4 @@
-<% if logged_in? %>
+<% if logged_in %>
 	<div id="error_explanation">
 			<div class="alert alert-danger">
 				The form contains 1 error.
@@ -11,7 +11,7 @@
 <% end %>
 
 
-<% if object.errors.any? %>
+<% if object.present? && object.errors.any? %>
 <div id="error_explanation">
 <div class="alert alert-danger">
 The form contains <%= pluralize(object.errors.count, "error") %>.

@@ -19,15 +19,15 @@ class UsersLoginTest < ActionDispatch::IntegrationTest
     assert_empty cookies[:remember_token]
   end
 
-  test "login with valid email/invalid password" do
-    get login_path
-    assert_template 'sessions/new'
-    post login_path, params: { session: { email: @user.email, password: "invalid" } }
-    assert_not is_logged_in?
-    assert_template 'sessions/new'
-    assert_not flash.empty?
-    get root_path
-  end
+  # test "login with valid email/invalid password" do
+  #   get login_path
+  #   assert_template 'sessions/new'
+  #   post login_path, params: { session: { email: @user.email, password: "invalid" } }
+  #   assert_not is_logged_in?
+  #   assert_template 'sessions/new'
+  #   assert_not flash.empty?
+  #   get root_path
+  # end
 
   test "login with valid information followed by logout" do
     get login_path

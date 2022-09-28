@@ -14,7 +14,7 @@ test "micropost interface" do
 end
 
   assert_select 'div#error_explanation'
-  assert_select 'a[href=?]', '/?page=2' # Correct pagination link
+  # assert_select 'a[href=?]', '/?page=2' # Correct pagination link
   # Valid submission
   content = "This micropost really ties the room together"
   assert_difference 'Micropost.count', 1 do
