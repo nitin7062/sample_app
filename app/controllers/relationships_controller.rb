@@ -4,7 +4,7 @@ class RelationshipsController < ApplicationController
 		current_user.follow(@user)
 		respond_to do |format|
 			format.html { redirect_to @user }
-			format.js
+			format.turbo_stream
 		end
 	end
 
@@ -12,8 +12,8 @@ class RelationshipsController < ApplicationController
 		@user = Relationship.find(params[:id]).followed
 		current_user.unfollow(@user)
 		respond_to do |format|
-			format.html { redirect_to @user }
-			format.js
+			format.html { redirect_to @user, status: :see_other }
+			format.turbo_stream
 		end
 	end
 end
