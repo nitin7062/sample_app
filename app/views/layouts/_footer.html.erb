@@ -8,6 +8,13 @@
 			<li><%= link_to "About", about_path %></li>
 			<li><%= link_to "Contact",contact_path %></li>
 			<li><a href="https://news.railstutorial.org/">News</a></li>
+			<li><button data-controller="top"
+				type="button"
+				class="btn btn-circle btn-sm"
+							data-action="click->top#scroll_top"
+			>
+				<%= image_tag("up-arrow.png", alt: "Rails logo", width: "15")%>
+			</button></li>
 		</ul>
 	</nav>
 </footer>

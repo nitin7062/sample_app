@@ -1,7 +1,7 @@
 <%= form_with(model: @micropost, local: true) do |f| %>
 	<div id='login_page'> </div>
-		<div class="field">
-			<%= f.text_area :content, placeholder: "Compose new micropost..." %>
+		<div class="field" data-controller="auto-grow-textarea">
+			<%= f.text_area :content, placeholder: "Compose new micropost...", data: { action: 'input->auto-grow-textarea#resize', target: 'auto-grow-textarea.input' } %>
 		</div>
 		<%= f.submit "Post", class: "btn btn-primary" %>
 		<span class="image">
